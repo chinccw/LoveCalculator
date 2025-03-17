@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <title>Love Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+
+        <style>
+            body {
+              margin: 0; /* Removes default margin */
+              height: 100vh; /* Full viewport height */
+              background-image: url('background_Image.jpg'); /* Replace with your image path */
+              background-size: cover; /* Ensures the image covers the entire area */
+              background-position: center; /* Centers the image */
+              background-repeat: no-repeat; /* Prevents tiling */
+              color: black; /* Makes text readable over the image */
+              display: flex; /* Optional: centers content vertically and horizontally */
+              justify-content: center; /* Optional: horizontally center text */
+              align-items: center; /* Optional: vertically center text */
+            }
+
+            #content-box1 {
+              position: absolute;
+              top: 50px; /* Distance from the top of the nearest positioned parent */
+      border: 2px solid black; /* 2px wide, solid style, black color */
+      background-color: rgb(250, 152, 250); /* Light blue background */
+    }
+    #title {  position: relative;
+        top: -20px; /* Moves the <h1> upward */
+            text-align: center; }
+        #yourname {display: inline-block;}
+        #yourcrushNametext {display: inline-block; }
+        #calculatebutton {margin-left: 130px; }
+        
+
+            </style>
+
+
+</head>
+
+<body>
+    <div id="content-box1">
+        <h1 id="title">Love Calculator</h1>
+        <p>Enter Your Name And Your Crush's Name to see compatibility : </p>
+        <p id="yourname"> &nbsp; Your Name : &nbsp;</p>
+        <input type="text" id="username" placeholder="Type here..." />
+        <br>
+        <p id="yourcrushNametext"> Crush's Name : </p>
+        <input type="text" id="crushNameInput" placeholder="Type here..." />
+         <br><button id="calculatebutton" style="width:140px; height: 55px; margin-top: 10px  ;">Calculate</button>
+
+        <p id="output" style="font-size: 20px;"></p> <!-- To display saved data -->
+        <p id="LovePercentage" style="text-align: center;  font-size: 30px;"></p>
+    </div>
+
+    <script>
+        // JavaScript to save input
+        document.getElementById("calculatebutton").addEventListener("click", function () 
+        {
+          // Get the value from the input field
+          let savedUsername =  document.getElementById("username").value;
+              savedUsername = savedUsername.toUpperCase();
+          let savedCrushName = document.getElementById("crushNameInput").value;
+              savedCrushName = savedCrushName.toUpperCase();
+          // Display it on the page (optional)
+          let randomNumber = Math.floor(Math.random()*101); 
+           document.getElementById("output").textContent = savedUsername + " and " + savedCrushName + " Chance of Love : ";
+           document.getElementById("LovePercentage").textContent = randomNumber +"%";
+          //console.log(randomNumber);
+          // Log it to the console (for testing)
+          // console.log("Saved Input:", savedUsername);
+        }); 
+      </script>
+
+
+
+</body>
+
+
+
+</html>
